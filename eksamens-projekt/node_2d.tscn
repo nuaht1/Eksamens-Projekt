@@ -12,18 +12,10 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-575, -323, 573, -323, 
 
 [node name="Node2D" type="Node2D"]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_0e48y")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(0, 1.90735e-06)
-scale = Vector2(0.261719, 0.222656)
-texture = ExtResource("1_wtcfe")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_y32ns")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Player"]
@@ -33,12 +25,16 @@ navigation_polygon = SubResource("NavigationPolygon_wtcfe")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
-[node name="ProgressBar" type="ProgressBar" parent="Player"]
-offset_left = -2.0
-offset_top = -44.0
-offset_right = 2.0
-offset_bottom = -17.0
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-147, -150)
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture = ExtResource("1_wtcfe")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+modulate = Color(0.0941176, 0.298039, 1, 1)
+self_modulate = Color(0.0784314, 0.054902, 0.713726, 1)
+offset_left = 489.0
+offset_top = 82.0
+offset_right = 699.0
+offset_bottom = 167.0
+metadata/_edit_use_anchors_ = true
