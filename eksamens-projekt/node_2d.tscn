@@ -1,19 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkkjhys5ah2op"]
+[gd_scene load_steps=6 format=3 uid="uid://bkkjhys5ah2op"]
 
 [ext_resource type="Script" uid="uid://dcxgmw6nod8eh" path="res://player.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://dhxbajwqj3o7j" path="res://icon.svg" id="1_wtcfe"]
+[ext_resource type="PackedScene" uid="uid://bduinbsl18e0i" path="res://acid_slime.tscn" id="3_epypp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y32ns"]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_0e48y"]
+vertices = PackedVector2Array(636.031, -274.008, 637.961, 355.008, -493.039, 356.977, -495.953, -275.977)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-506, -286, 646, -284, 648, 365, -503, 367)])
+
 [node name="Node2D" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(504, 284)
 script = ExtResource("1_0e48y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0.5, -4)
 shape = SubResource("RectangleShape2D_y32ns")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(576, 305)
-scale = Vector2(0.632813, 0.578125)
+position = Vector2(4.76837e-06, -3.00001)
+scale = Vector2(0.507813, 0.5)
 texture = ExtResource("1_wtcfe")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="CharacterBody2D"]
+navigation_polygon = SubResource("NavigationPolygon_0e48y")
+
+[node name="Acid_Slime" parent="." instance=ExtResource("3_epypp")]
