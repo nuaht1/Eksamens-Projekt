@@ -29,6 +29,8 @@ texture = ExtResource("1_wtcfe")
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="CharacterBody2D"]
 navigation_polygon = SubResource("NavigationPolygon_0e48y")
 
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
 [node name="Acid_Slime" parent="." instance=ExtResource("3_epypp")]
 
 [node name="UI" type="CanvasLayer" parent="."]
