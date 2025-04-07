@@ -7,6 +7,7 @@
 size = Vector2(110, 115)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aq6m0"]
+size = Vector2(121, 124)
 
 [node name="Acid_Slime" type="CharacterBody2D"]
 position = Vector2(399, 191)
@@ -24,4 +25,7 @@ texture = ExtResource("2_aq6m0")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_aq6m0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

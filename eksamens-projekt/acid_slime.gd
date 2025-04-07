@@ -24,3 +24,14 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 	else:
 		velocity = Vector2.ZERO
+		
+
+var can_attack = true
+@export var attack_cooldown := 1.0  # seconds
+
+func _on_area_2d_body_entered(body: Node) -> void:
+	if body.is_in_group("player") and can_attack:
+		can_attack = false
+		body.take_damage(20)
+		await get_tree().create_timer(attack_cooldown).timeout
+		can_attack = true

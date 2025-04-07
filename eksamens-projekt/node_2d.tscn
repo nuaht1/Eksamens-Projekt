@@ -30,3 +30,11 @@ texture = ExtResource("1_wtcfe")
 navigation_polygon = SubResource("NavigationPolygon_0e48y")
 
 [node name="Acid_Slime" parent="." instance=ExtResource("3_epypp")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" type="ProgressBar" parent="UI"]
+offset_left = 14.0
+offset_top = 17.0
+offset_right = 226.0
+offset_bottom = 51.0
