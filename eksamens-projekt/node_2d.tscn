@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=4 uid="uid://bkkjhys5ah2op"]
 
 [ext_resource type="Script" uid="uid://dcxgmw6nod8eh" path="res://player.gd" id="1_0e48y"]
-[ext_resource type="Texture2D" uid="uid://dhxbajwqj3o7j" path="res://icon.svg" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://bduinbsl18e0i" path="res://acid_slime.tscn" id="3_epypp"]
 [ext_resource type="Texture2D" uid="uid://7pdyl6gfx30m" path="res://tileset 1/tile 3.png" id="4_kdubu"]
 [ext_resource type="Texture2D" uid="uid://drkn8cb6ytltf" path="res://tileset 1/tile 2.png" id="5_d21ai"]
+[ext_resource type="Texture2D" uid="uid://dfyt23v2e64ky" path="res://prototype player.png" id="5_kdubu"]
 [ext_resource type="Texture2D" uid="uid://citqkx8fsof4b" path="res://tileset 1/tile 1.png" id="6_rj586"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4d7sh"]
@@ -85,7 +85,7 @@ shape = SubResource("RectangleShape2D_y32ns")
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(4.76837e-06, -3.00001)
 scale = Vector2(0.507813, 0.5)
-texture = ExtResource("1_wtcfe")
+texture = ExtResource("5_kdubu")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="CharacterBody2D"]
 navigation_polygon = SubResource("NavigationPolygon_0e48y")
