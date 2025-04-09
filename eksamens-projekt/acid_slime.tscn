@@ -1,23 +1,25 @@
 [gd_scene load_steps=5 format=3 uid="uid://bduinbsl18e0i"]
 
 [ext_resource type="Script" uid="uid://dw763ts7v7eu3" path="res://acid_slime.gd" id="1_aq6m0"]
-[ext_resource type="Texture2D" uid="uid://dhxbajwqj3o7j" path="res://icon.svg" id="2_aq6m0"]
+[ext_resource type="Texture2D" uid="uid://bp06rd5i763lg" path="res://Acid Slime.png" id="2_aq6m0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n6rxs"]
-size = Vector2(110, 115)
+size = Vector2(75, 53)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aq6m0"]
-size = Vector2(121, 124)
+size = Vector2(77, 50)
 
 [node name="Acid_Slime" type="CharacterBody2D"]
-position = Vector2(399, 191)
+position = Vector2(316, 156)
 script = ExtResource("1_aq6m0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 1.5)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_n6rxs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-6, -6.99998)
+scale = Vector2(0.451172, 0.410156)
 texture = ExtResource("2_aq6m0")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." groups=["Player"]]
@@ -25,7 +27,6 @@ texture = ExtResource("2_aq6m0")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_aq6m0")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
