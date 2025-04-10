@@ -158,6 +158,7 @@ position = Vector2(-504, -284)
 [node name="Acid_Slime" parent="." instance=ExtResource("3_epypp")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Acid_Slime"]
+visible = false
 
 [node name="UI" type="CanvasLayer" parent="."]
 
