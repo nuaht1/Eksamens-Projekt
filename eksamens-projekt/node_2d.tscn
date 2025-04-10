@@ -94,9 +94,13 @@ texture = ExtResource("5_rj586")
 texture_region_size = Vector2i(64, 64)
 use_texture_padding = false
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.2408, 1.69342, 32, 0.564472, 32, 32, -26.5303, 32, -10.1605, 12.9829)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 22.579, -13.5474, 20.3211, -32, 2.2579)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(22.0145, -32, 32, -8.46711, 19.1921, 19.1921, -32, 20.8855, -32, -32)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.51579, 5.08027, 9.03158, 13.5474, 18.6276, 32, -32, 32, -32, 1.12895)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nr8wp"]
 texture = ExtResource("5_rj586")
@@ -104,6 +108,8 @@ texture_region_size = Vector2i(256, 256)
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_nr8wp"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0h7mo")
 sources/1 = SubResource("TileSetAtlasSource_nr8wp")
 
@@ -124,7 +130,7 @@ tile_set = SubResource("TileSet_x0ka3")
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 position = Vector2(37, -1)
 scale = Vector2(0.43705, 0.510372)
-tile_map_data = PackedByteArray("AAA3ABoAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAA3ABoAAQAAAAAAAAAJAAcAAAABAAEAAAAJAAgAAAABAAIAAAAKAAcAAAACAAEAAAAKAAgAAAACAAIAAAA=")
 tile_set = SubResource("TileSet_nr8wp")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
@@ -145,7 +151,13 @@ navigation_polygon = SubResource("NavigationPolygon_0e48y")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+visible = false
+position = Vector2(-504, -284)
+
 [node name="Acid_Slime" parent="." instance=ExtResource("3_epypp")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Acid_Slime"]
 
 [node name="UI" type="CanvasLayer" parent="."]
 
