@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bkkjhys5ah2op"]
+[gd_scene load_steps=19 format=4 uid="uid://bkkjhys5ah2op"]
 
 [ext_resource type="Script" uid="uid://dcxgmw6nod8eh" path="res://player.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://cik1fq3antsfa" path="res://tileset 1/Sand.png" id="1_d21ai"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dfyt23v2e64ky" path="res://prototype player.png" id="5_kdubu"]
 [ext_resource type="Texture2D" uid="uid://cqu3203u64df0" path="res://tileset 1/rock.png" id="5_rj586"]
 [ext_resource type="Texture2D" uid="uid://citqkx8fsof4b" path="res://tileset 1/tile 1.png" id="6_rj586"]
+[ext_resource type="PackedScene" uid="uid://6ncabvvqhph8" path="res://water_spell.tscn" id="9_4d7sh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rj586"]
 texture = ExtResource("1_d21ai")
@@ -127,3 +128,5 @@ offset_left = 14.0
 offset_top = 17.0
 offset_right = 226.0
 offset_bottom = 51.0
+
+[node name="WaterSpell" parent="." instance=ExtResource("9_4d7sh")]
