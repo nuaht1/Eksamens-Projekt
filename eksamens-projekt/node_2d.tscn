@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=4 uid="uid://bkkjhys5ah2op"]
+[gd_scene load_steps=20 format=4 uid="uid://bkkjhys5ah2op"]
 
 [ext_resource type="Script" uid="uid://dcxgmw6nod8eh" path="res://player.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://cik1fq3antsfa" path="res://tileset 1/Sand.png" id="1_d21ai"]
+[ext_resource type="Script" uid="uid://bhhb6p1glaq4u" path="res://node_2d.gd" id="1_ir8iy"]
 [ext_resource type="PackedScene" uid="uid://bduinbsl18e0i" path="res://acid_slime.tscn" id="3_epypp"]
 [ext_resource type="Texture2D" uid="uid://7pdyl6gfx30m" path="res://tileset 1/tile 3.png" id="4_kdubu"]
 [ext_resource type="Texture2D" uid="uid://drkn8cb6ytltf" path="res://tileset 1/tile 2.png" id="5_d21ai"]
@@ -90,6 +91,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-506, -286, 646, -284, 648, 365, -503, 367)])
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_ir8iy")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(37, -1)
@@ -130,3 +132,9 @@ offset_right = 226.0
 offset_bottom = 51.0
 
 [node name="WaterSpell" parent="." instance=ExtResource("9_4d7sh")]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
