@@ -84,7 +84,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_x0ka3")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y32ns"]
-size = Vector2(67, 103)
+size = Vector2(34, 43)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_0e48y"]
 vertices = PackedVector2Array(636.031, -274.008, 637.961, 355.008, -493.039, 356.977, -495.953, -275.977)
@@ -105,10 +105,11 @@ tile_set = SubResource("TileSet_0h7mo")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
 position = Vector2(504, 284)
+collision_layer = 3
 script = ExtResource("1_0e48y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-6.5, 11.5)
+position = Vector2(-5, 24.5)
 shape = SubResource("RectangleShape2D_y32ns")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
@@ -117,6 +118,7 @@ scale = Vector2(0.507813, 0.5)
 texture = ExtResource("5_kdubu")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="CharacterBody2D"]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_0e48y")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]

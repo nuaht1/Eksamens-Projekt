@@ -13,7 +13,7 @@ var current_health: int
 # ——————————————————————————————————————————————————————————————
 # WaterSpell
 var WaterSpellScene: PackedScene = preload("res://water_spell.tscn")
-@export var spell_spawn_offset: float = 24.0  # pixels in front of the player
+@export var spell_spawn_offset: float = 100.0  # pixels in front of the player
 
 func _ready() -> void:
 	current_health = max_health

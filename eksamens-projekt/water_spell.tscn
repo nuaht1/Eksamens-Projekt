@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dam7a3yl15okx" path="res://WatersSpell.png" id="2_b2h18"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i5veo"]
-radius = 15.0
-height = 32.0
+radius = 74.0
+height = 148.0
 
 [node name="WaterSpell" type="Area2D"]
 position = Vector2(-381, -175)

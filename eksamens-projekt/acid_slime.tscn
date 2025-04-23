@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bduinbsl18e0i"]
+[gd_scene load_steps=9 format=3 uid="uid://bduinbsl18e0i"]
 
 [ext_resource type="Script" uid="uid://dw763ts7v7eu3" path="res://acid_slime.gd" id="1_aq6m0"]
 [ext_resource type="Texture2D" uid="uid://cowtcghie6emi" path="res://tileset 1/slime on ground.png" id="2_2mp0m"]
-[ext_resource type="Texture2D" uid="uid://bp06rd5i763lg" path="res://Acid Slime.png" id="2_aq6m0"]
 [ext_resource type="Texture2D" uid="uid://eciishadahbg" path="res://tileset 1/slime mid jump.png" id="3_hqkhr"]
 [ext_resource type="Texture2D" uid="uid://vfom5qj7q3i3" path="res://tileset 1/slime mid jump 2.png" id="4_23nsg"]
 [ext_resource type="Texture2D" uid="uid://ywmpsw7fedpp" path="res://tileset 1/slime in air.png" id="5_u83cg"]
@@ -51,12 +50,6 @@ position = Vector2(-1, -5.25)
 scale = Vector2(0.304688, 0.236328)
 sprite_frames = SubResource("SpriteFrames_b3vvc")
 animation = &"slime animation"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-6, -6.99998)
-scale = Vector2(0.451172, 0.410156)
-texture = ExtResource("2_aq6m0")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." groups=["Player"]]
 
