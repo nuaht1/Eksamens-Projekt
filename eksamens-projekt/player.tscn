@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhr62uamcwob3"]
+
+[ext_resource type="Script" uid="uid://dcxgmw6nod8eh" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dfyt23v2e64ky" path="res://prototype player.png" id="2_i3pqv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
+size = Vector2(46, 53.5)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_sweqy"]
+vertices = PackedVector2Array(636.031, -274.008, 637.961, 355.008, -493.039, 356.977, -495.953, -275.977)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-506, -286, 646, -284, 648, 365, -503, 367)])
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(517, 268)
+collision_layer = 3
+script = ExtResource("1_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 7.25)
+shape = SubResource("RectangleShape2D_hqtel")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(8, -12)
+scale = Vector2(0.507813, 0.5)
+texture = ExtResource("2_i3pqv")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Player"]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_sweqy")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(1, 1)

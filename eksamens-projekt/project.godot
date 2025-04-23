@@ -11,14 +11,13 @@ config_version=5
 [application]
 
 config/name="Eksamens-Projekt"
-run/main_scene="uid://bkkjhys5ah2op"
+run/main_scene="uid://bnemx80yufm87"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [global_group]
 
 player=""
-enemy=""
 
 [input]
 
