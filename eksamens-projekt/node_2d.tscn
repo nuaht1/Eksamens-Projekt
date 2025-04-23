@@ -84,7 +84,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_x0ka3")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y32ns"]
-size = Vector2(34, 43)
+size = Vector2(46, 53.5)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_0e48y"]
 vertices = PackedVector2Array(636.031, -274.008, 637.961, 355.008, -493.039, 356.977, -495.953, -275.977)
@@ -104,16 +104,16 @@ tile_map_data = PackedByteArray("AAAJAAQAAAABAAEAAAABAAEAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_0h7mo")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
-position = Vector2(504, 284)
+position = Vector2(517, 268)
 collision_layer = 3
 script = ExtResource("1_0e48y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-5, 24.5)
+position = Vector2(0, 7.25)
 shape = SubResource("RectangleShape2D_y32ns")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(4.76837e-06, -3.00001)
+position = Vector2(8, -12)
 scale = Vector2(0.507813, 0.5)
 texture = ExtResource("5_kdubu")
 
@@ -122,6 +122,7 @@ visible = false
 navigation_polygon = SubResource("NavigationPolygon_0e48y")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(1, 1)
 
 [node name="Acid_Slime" parent="." instance=ExtResource("3_epypp")]
 position = Vector2(294, 216)
