@@ -26,9 +26,12 @@ func _physics_process(delta: float) -> void:
 		queue_free()
 
 func _on_body_entered(body: Node) -> void:
-	print("WaterSpell collided with:", body.name, " in group enemy?", body.is_in_group("enemy"))
-	if body.is_in_group("enemy"):
-		print(" → hit an enemy, calling take_damage()")
-		body.take_damage(20)
-	# In any case, destroy the spell
+	var target := body
+	while target and not target.is_in_group("enemy"):
+		target = target.get_parent()
+	if target:
+		print(" → Hitting enemy:", target.name)
+		target.take_damage(20)
+	else:
+		print(" → Hit non-enemy:", body.name)
 	queue_free()

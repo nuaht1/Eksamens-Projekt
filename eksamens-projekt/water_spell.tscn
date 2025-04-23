@@ -8,6 +8,7 @@ radius = 15.0
 height = 32.0
 
 [node name="WaterSpell" type="Area2D"]
+position = Vector2(-381, -175)
 script = ExtResource("1_b2h18")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

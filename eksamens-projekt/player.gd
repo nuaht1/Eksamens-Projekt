@@ -1,4 +1,3 @@
-# player.gd
 extends CharacterBody2D
 
 # ——————————————————————————————————————————————————————————————
@@ -13,15 +12,14 @@ var current_health: int
 
 # ——————————————————————————————————————————————————————————————
 # WaterSpell
-# Preload your projectile scene (rename your .tscn to WaterSpell.tscn)
 var WaterSpellScene: PackedScene = preload("res://water_spell.tscn")
+@export var spell_spawn_offset: float = 24.0  # pixels in front of the player
 
 func _ready() -> void:
 	current_health = max_health
 	update_health_bar()
 
 func _physics_process(_delta: float) -> void:
-	# PLAYER MOVEMENT
 	var direction = Vector2.ZERO
 	if Input.is_action_pressed("ui_right"):
 		direction.x += 1
@@ -32,21 +30,21 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("ui_up"):
 		direction.y -= 1
 	direction = direction.normalized()
+	
 	velocity = direction * move_speed
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
-	# WATER SPELL ON LEFT CLICK
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			var spell = WaterSpellScene.instantiate()
-			# Add it into the same parent as the player (world)
-			get_parent().add_child(spell)
-			# Spawn at the player's position
-			spell.global_position = global_position
-			# Aim toward the mouse
-			var to_mouse = (get_global_mouse_position() - global_position).normalized()
-			spell.direction = to_mouse
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		var spell = WaterSpellScene.instantiate()
+		get_parent().add_child(spell)
+		
+		# Aim direction
+		var to_mouse = (get_global_mouse_position() - global_position).normalized()
+		spell.direction = to_mouse
+		
+		# Spawn it spell_spawn_offset pixels ahead
+		spell.global_position = global_position + to_mouse * spell_spawn_offset
 
 # ——————————————————————————————————————————————————————————————
 # DAMAGE & DEATH
