@@ -15,7 +15,9 @@ func _on_SpawnTimer_timeout() -> void:
 	
 	# draw above the TileMap (default Z = 0)
 	slime.z_index = 1
-	slime.get_node("Sprite2D").z_index = 1
+	var sprite = slime.get_node("AnimatedSprite2D")
+	sprite.z_index = 1
+	sprite.play("slime animation")
 	
 	# pick a random position in the visible viewport
 	var r = get_viewport().get_visible_rect()
