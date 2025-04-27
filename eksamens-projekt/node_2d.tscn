@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bkkjhys5ah2op"]
+[gd_scene load_steps=24 format=4 uid="uid://bkkjhys5ah2op"]
 
 [ext_resource type="Script" uid="uid://dcxgmw6nod8eh" path="res://player.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://cik1fq3antsfa" path="res://tileset 1/Sand.png" id="1_d21ai"]
@@ -91,6 +91,22 @@ vertices = PackedVector2Array(636.031, -274.008, 637.961, 355.008, -493.039, 356
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-506, -286, 646, -284, 648, 365, -503, 367)])
 
+[sub_resource type="TileSet" id="TileSet_ir8iy"]
+tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 1
+
+[sub_resource type="TileSet" id="TileSet_hqns4"]
+tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 1
+
+[sub_resource type="TileSet" id="TileSet_nr8wp"]
+tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 1
+
+[sub_resource type="TileSet" id="TileSet_d2bti"]
+tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 1
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ir8iy")
 
@@ -141,5 +157,21 @@ offset_bottom = 51.0
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+visible = false
+tile_set = SubResource("TileSet_ir8iy")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="TileMapLayer2"]
+visible = false
+tile_set = SubResource("TileSet_hqns4")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="."]
+visible = false
+tile_set = SubResource("TileSet_nr8wp")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="TileMapLayer3"]
+visible = false
+tile_set = SubResource("TileSet_d2bti")
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
