@@ -6,10 +6,10 @@
 script = ExtResource("1_c5uhu")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-offset_left = 376.0
+offset_left = 316.0
 offset_top = 159.0
-offset_right = 416.0
-offset_bottom = 199.0
+offset_right = 521.0
+offset_bottom = 261.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
 layout_mode = 2
