@@ -16,9 +16,11 @@ layout_mode = 2
 
 [node name="ButtonHydrogen" type="Button" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
+text = "H"
 
 [node name="ButtonOxygen" type="Button" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
+text = "O"
 
 [node name="ButtonValidate" type="Button" parent="PanelContainer"]
 layout_mode = 2
