@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsuon4q7wn4vj"]
+
+[ext_resource type="Script" uid="uid://bh533oloyd8nh" path="res://spell_crafting.gd" id="1_c5uhu"]
+[ext_resource type="PackedScene" uid="uid://t5fejtrdhdw8" path="res://atom(hydrogen).tscn" id="1_noce4"]
+[ext_resource type="PackedScene" uid="uid://42rwdfo0v51i" path="res://atom(oxygen).tscn" id="2_ujpcv"]
+[ext_resource type="Script" uid="uid://b2esr7ccw4k0q" path="res://craft_area.gd" id="3_la0hd"]
+[ext_resource type="Script" uid="uid://df1guctk4a6ur" path="res://spells_tab.gd" id="5_ie85q"]
+
+[node name="SpellCrafting" type="CanvasLayer"]
+script = ExtResource("1_c5uhu")
+
+[node name="Window" type="Window" parent="."]
+position = Vector2i(400, 250)
+size = Vector2i(350, 250)
+
+[node name="TabContainer" type="TabContainer" parent="Window"]
+offset_left = -1.0
+offset_right = 216.0
+offset_bottom = 68.0
+current_tab = 0
+
+[node name="CraftTab" type="HBoxContainer" parent="Window/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Atom(Hydrogen)" parent="Window/TabContainer/CraftTab" instance=ExtResource("1_noce4")]
+layout_mode = 2
+
+[node name="Atom(Oxygen)" parent="Window/TabContainer/CraftTab" instance=ExtResource("2_ujpcv")]
+layout_mode = 2
+
+[node name="CraftArea" type="ColorRect" parent="Window/TabContainer/CraftTab"]
+layout_mode = 2
+script = ExtResource("3_la0hd")
+
+[node name="Button" type="Button" parent="Window/TabContainer/CraftTab"]
+visible = false
+layout_mode = 2
+
+[node name="SpellsTab" type="VBoxContainer" parent="Window/TabContainer"]
+visible = false
+layout_mode = 2
+script = ExtResource("5_ie85q")
+metadata/_tab_index = 1
+
+[node name="LearnedSpellList" type="ItemList" parent="Window/TabContainer/SpellsTab"]
+layout_mode = 2
