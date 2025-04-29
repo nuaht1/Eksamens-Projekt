@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://t5fejtrdhdw8"]
-
-[ext_resource type="Script" uid="uid://bmyike0ry70eh" path="res://atom(hydrogen).gd" id="2_siy36"]
-
-[node name="Atome(Hydrogen)" type="Button"]
-offset_right = 8.0
-offset_bottom = 8.0
-text = "H"
-script = ExtResource("2_siy36")

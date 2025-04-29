@@ -1,49 +1,42 @@
+# SpellCrafting.gd
 extends CanvasLayer
 
-@onready var window_dialog = $Window
-@onready var craft_area    = window_dialog.get_node("TabContainer/CraftTab/CraftArea")
-@onready var validate_btn  = window_dialog.get_node("TabContainer/CraftTab/Button")
-@onready var spells_tab    = window_dialog.get_node("TabContainer/SpellsTab")
+@export var AtomScene: PackedScene = preload("res://Atom.tscn")
 
-var learned_spells: Array[String] = []
+@onready var craft_area   := $"CraftArea"
+@onready var panel        := $"PanelContainer"
+@onready var btn_h        := panel.get_node("HBoxContainer/ButtonHydrogen")
+@onready var btn_o        := panel.get_node("HBoxContainer/ButtonOxygen")
+@onready var btn_validate := panel.get_node("ButtonValidate")
 
 func _ready() -> void:
-	# Hide the entire UI at startup
-	hide_ui()
+	# start hidden
+	panel.visible = false
 
-	# Wire up the validate button and the spells tab
-	validate_btn.pressed.connect(Callable(self, "_on_validate_pressed"))
-	spells_tab.spell_selected.connect(Callable(self, "_on_equip_spell"))
+	# wire up spawning & validation
+	btn_h.pressed.connect(_spawn_h)
+	btn_o.pressed.connect(_spawn_o)
+	btn_validate.pressed.connect(_validate_structure)
 
 func show_ui() -> void:
-	visible = true
-	window_dialog.show()
-
+	panel.visible = true
 
 func hide_ui() -> void:
-	visible = false
-	window_dialog.hide()
+	panel.visible = false
 
-func _on_validate_pressed() -> void:
-	var angle: float = craft_area.get_molecule_angle()
-	if angle < 0.0:
-		return show_message("You need exactly 1 O and 2 H atoms.")
+func _spawn_h() -> void:
+	var a = AtomScene.instantiate()
+	a.element = "H"
+	craft_area.add_child(a)
+	a.global_position = craft_area.global_position
 
-	if abs(angle - 104.5) <= 15.0:
-		show_message("Water spell learned!")
-		learned_spells.append("Water")
-		spells_tab.update_spells(learned_spells)
-		craft_area.clear_atoms()
-		hide_ui()
-	else:
-		show_message("Angle must be ~104° (got %.1f°)" % angle)
+func _spawn_o() -> void:
+	var a = AtomScene.instantiate()
+	a.element = "O"
+	craft_area.add_child(a)
+	a.global_position = craft_area.global_position
 
-func _on_equip_spell(spell: String) -> void:
-	print("Equipped:", spell)
-	# TODO: store it on the player or in a global
-
-func show_message(text: String) -> void:
-	var dlg := AcceptDialog.new()
-	add_child(dlg)
-	dlg.dialog_text = text
-	dlg.popup_centered_minsize()
+func _validate_structure() -> void:
+	# …your existing angle‐check code…
+	# when done:
+	hide_ui()

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwiexy30gsg2v"]
+
+[ext_resource type="Texture2D" uid="uid://dam7a3yl15okx" path="res://WatersSpell.png" id="1_hat3h"]
+[ext_resource type="Script" uid="uid://mou8iy8i673t" path="res://Atom.gd" id="2_sv7i8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6x8qo"]
+radius = 174.159
+
+[node name="Atom" type="Sprite2D"]
+position = Vector2(914, 364)
+scale = Vector2(0.164063, 0.166016)
+texture = ExtResource("1_hat3h")
+script = ExtResource("2_sv7i8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6x8qo")
+one_way_collision_margin = 0.0

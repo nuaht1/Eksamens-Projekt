@@ -60,7 +60,5 @@ func _process(_delta: float) -> void:
 		get_tree().change_scene_to_file(CombatScene)
 
 func _input(event: InputEvent) -> void:
-	# open crafting UI on craft action
-	# (make sure "craft" is bound to C in Input Map)
-	if inside_crafting and event.is_action_pressed("craft"):
-		spell_ui.call("show_ui")
+	if inside_crafting and event is InputEventKey and event.pressed and event.keycode == KEY_C:
+		$SpellCrafting.show_ui()
