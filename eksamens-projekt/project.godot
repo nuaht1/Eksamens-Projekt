@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 ScoreManager="*res://ScoreManager.gd"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
+
 [global_group]
 
 player=""
