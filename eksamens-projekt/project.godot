@@ -15,6 +15,10 @@ run/main_scene="uid://bnemx80yufm87"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ScoreManager="*res://ScoreManager.gd"
+
 [global_group]
 
 player=""

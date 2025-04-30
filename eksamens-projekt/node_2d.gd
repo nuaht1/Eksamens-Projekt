@@ -2,12 +2,15 @@ extends Node2D
 
 @export var SlimeScene: PackedScene = preload("res://acid_slime.tscn")
 
+
+
 func _ready() -> void:
 	randomize()
 	# Assumes you added a Timer named "SpawnTimer" as a child, autostart=true, one_shot=false, wait_time=5
 	var timer = $SpawnTimer
 	if not timer.is_connected("timeout", Callable(self, "_on_SpawnTimer_timeout")):
 		timer.connect("timeout", Callable(self, "_on_SpawnTimer_timeout"))
+
 
 func _on_SpawnTimer_timeout() -> void:
 	var slime = SlimeScene.instantiate()

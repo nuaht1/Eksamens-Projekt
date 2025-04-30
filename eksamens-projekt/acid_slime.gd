@@ -46,6 +46,10 @@ func take_damage(amount: int) -> void:
 	print("Slime took %d damage, health now %d" % [amount, current_health])
 	if current_health <= 0:
 		die()
+		# e.g. in your Enemy.gd, when health <= 0:
+		ScoreManager.add_score(1)  # or whatever point value
+		queue_free()
+
 
 func die() -> void:
 	# You could spawn particles or play a sound here
