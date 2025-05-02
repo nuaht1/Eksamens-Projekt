@@ -38,8 +38,7 @@ func _on_Portal_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		inside_portal = true
 		print("Entered portal area. Press F to go to combat.")
-		ScoreManager.reset_score()
-
+		# ScoreManager.reset_score() removed to avoid missing-autoload errors
 
 func _on_Portal_body_exited(body: Node) -> void:
 	if body.is_in_group("player"):

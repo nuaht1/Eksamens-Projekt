@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cot7kmuge2sg7"]
+
+[ext_resource type="Script" uid="uid://cj3656mv822rh" path="res://SQLController.gd" id="1_0fbet"]
+
+[node name="Control" type="CanvasLayer"]
+script = ExtResource("1_0fbet")
+
+[node name="HighScoreLabel" type="Label" parent="."]
+offset_left = 322.0
+offset_top = 22.0
+offset_right = 418.0
+offset_bottom = 45.0
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 234.0
+offset_top = 22.0
+offset_right = 282.0
+offset_bottom = 45.0

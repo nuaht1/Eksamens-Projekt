@@ -4,12 +4,17 @@ extends Node2D
 
 
 
+
+
 func _ready() -> void:
 	randomize()
 	# Assumes you added a Timer named "SpawnTimer" as a child, autostart=true, one_shot=false, wait_time=5
 	var timer = $SpawnTimer
 	if not timer.is_connected("timeout", Callable(self, "_on_SpawnTimer_timeout")):
 		timer.connect("timeout", Callable(self, "_on_SpawnTimer_timeout"))
+		GlobalControl.reset_score()
+
+
 
 
 func _on_SpawnTimer_timeout() -> void:
