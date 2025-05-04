@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkfkk2ayeylqj"]
+
+[ext_resource type="Script" uid="uid://b7wcnwi88t2hu" path="res://crafting_menu.gd" id="1_bf4mk"]
+[ext_resource type="PackedScene" uid="uid://c856iwxkl1r38" path="res://AtomSlot.tscn" id="2_xpo85"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bf4mk"]
+bg_color = Color(0.357401, 0.131648, 0.434538, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpo85"]
+bg_color = Color(0.356863, 0.133333, 0.435294, 1)
+
+[node name="CraftingMenu" type="PanelContainer"]
+process_mode = 3
+offset_left = 454.0
+offset_top = 124.0
+offset_right = 756.0
+offset_bottom = 387.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bf4mk")
+script = ExtResource("1_bf4mk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SpawnButtonH" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Atom H"
+
+[node name="SpawnButtonO" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Atom O"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label(Crafting)" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Crafting"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_xpo85")
+
+[node name="CraftingPanel" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="AtomSlot" parent="VBoxContainer/CraftingPanel" instance=ExtResource("2_xpo85")]
+layout_mode = 2
+
+[node name="AtomSlot2" parent="VBoxContainer/CraftingPanel" instance=ExtResource("2_xpo85")]
+layout_mode = 2
+
+[node name="AtomSlot3" parent="VBoxContainer/CraftingPanel" instance=ExtResource("2_xpo85")]
+layout_mode = 2
+
+[node name="CraftButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Craft"
+
+[node name="SucessLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ResultPanel" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CloseButton" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "X"

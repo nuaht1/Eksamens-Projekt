@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cw05ux4u4unsr"]
+
+[node name="StructuralFormula" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label H" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "H"
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(20, 2)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label O" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "O"
+
+[node name="ColorRect2" type="ColorRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(20, 2)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "H"

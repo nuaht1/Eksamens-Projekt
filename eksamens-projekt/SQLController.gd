@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-
-
 signal score_changed(new_score: int)
 signal high_score_changed(new_high_score: int)
 

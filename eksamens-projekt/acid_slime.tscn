@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bduinbsl18e0i"]
 
-[ext_resource type="Script" uid="uid://dw763ts7v7eu3" path="res://acid_slime.gd" id="1_aq6m0"]
+[ext_resource type="Script" uid="uid://dw763ts7v7eu3" path="res://Scripts/acid_slime.gd" id="1_aq6m0"]
 [ext_resource type="Texture2D" uid="uid://cowtcghie6emi" path="res://tileset 1/slime on ground.png" id="2_2mp0m"]
 [ext_resource type="Texture2D" uid="uid://eciishadahbg" path="res://tileset 1/slime mid jump.png" id="3_hqkhr"]
 [ext_resource type="Texture2D" uid="uid://vfom5qj7q3i3" path="res://tileset 1/slime mid jump 2.png" id="4_23nsg"]
