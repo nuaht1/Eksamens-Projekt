@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c856iwxkl1r38"]
 
-[ext_resource type="Script" path="res://AtomSlot.gd" id="1_7r8us"]
+[ext_resource type="Script" uid="uid://blmntxfai7oyx" path="res://AtomSlot.gd" id="1_7r8us"]
 
 [node name="AtomSlot" type="Control"]
 custom_minimum_size = Vector2(48, 48)

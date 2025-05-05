@@ -3,6 +3,8 @@ extends Node2D
 @export var PlayerScene: PackedScene = preload("res://player.tscn")
 @export var CombatScene: String       = "res://node_2d.tscn"
 @onready var crafting_menu = $UISpellCraft/CraftingMenu
+@onready var craft_guide_label = get_node("/root/SafeCamp/UISpellCraft/CraftGuideLabel")
+@onready var portal_guide_label = get_node("/root/SafeCamp/UISpellCraft/PortalGuideLabel")
 
 
 # runtime state
@@ -44,21 +46,25 @@ func _on_Portal_body_entered(body: Node) -> void:
 		inside_portal = true
 		print("Entered portal area. Press F to go to combat.")
 		# ScoreManager.reset_score() removed to avoid missing-autoload errors
+		portal_guide_label.visible = true
 
 func _on_Portal_body_exited(body: Node) -> void:
 	if body.is_in_group("player"):
 		inside_portal = false
 		print("Left portal area.")
+		portal_guide_label.visible = false
 
 func _on_CraftingArea_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		inside_crafting = true
 		print("Entered crafting area. Press C to open crafting menu.")
+		craft_guide_label.visible = true
 
 func _on_CraftingArea_body_exited(body: Node) -> void:
 	if body.is_in_group("player"):
 		inside_crafting = false
 		print("Left crafting area.")
+		craft_guide_label.visible = false
 
 # Use _unhandled_input so UI buttons still work when menu is up
 func _unhandled_input(event: InputEvent) -> void:

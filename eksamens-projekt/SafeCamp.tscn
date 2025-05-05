@@ -28,7 +28,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_8lr0m")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1a8y7"]
-radius = 52.6118
+radius = 84.214
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ix8h7"]
 radius = 127.318
@@ -93,6 +93,22 @@ texture = ExtResource("2_ix8h7")
 [node name="UISpellCraft" type="CanvasLayer" parent="."]
 
 [node name="CraftingMenu" parent="UISpellCraft" instance=ExtResource("5_mqg62")]
+
+[node name="CraftGuideLabel" type="Label" parent="UISpellCraft"]
+visible = false
+offset_left = 833.0
+offset_top = 67.0
+offset_right = 950.0
+offset_bottom = 90.0
+text = "Press C to craft"
+
+[node name="PortalGuideLabel" type="Label" parent="UISpellCraft"]
+visible = false
+offset_left = 240.0
+offset_top = 77.0
+offset_right = 381.0
+offset_bottom = 100.0
+text = "Press F to teleport"
 
 [node name="Label" type="Label" parent="."]
 offset_left = 813.0
