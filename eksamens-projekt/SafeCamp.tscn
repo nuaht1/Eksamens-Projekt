@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=4 uid="uid://bnemx80yufm87"]
 
-[ext_resource type="Script" uid="uid://b0dw1qru6h05h" path="res://SafeCamp.gd" id="1_gap17"]
+[ext_resource type="Script" uid="uid://b0dw1qru6h05h" path="res://Scripts/SafeCamp.gd" id="1_gap17"]
 [ext_resource type="Texture2D" uid="uid://dam7a3yl15okx" path="res://WatersSpell.png" id="2_ix8h7"]
 [ext_resource type="Texture2D" uid="uid://ba0pqannm7csd" path="res://tileset 1/grass tile.png" id="2_mqg62"]
 [ext_resource type="Texture2D" uid="uid://b2qd1rrwabmnx" path="res://table for base.png" id="3_crqfw"]

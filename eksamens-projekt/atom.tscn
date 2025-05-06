@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dwiexy30gsg2v"]
 
-[ext_resource type="Script" uid="uid://mou8iy8i673t" path="res://Atom.gd" id="2_sv7i8"]
+[ext_resource type="Script" uid="uid://mou8iy8i673t" path="res://Scripts/Atom.gd" id="2_sv7i8"]
 
 [node name="Atom" type="Label"]
 offset_left = 914.0

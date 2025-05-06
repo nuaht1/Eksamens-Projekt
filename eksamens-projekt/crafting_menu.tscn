@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dkfkk2ayeylqj"]
 
-[ext_resource type="Script" uid="uid://b7wcnwi88t2hu" path="res://crafting_menu.gd" id="1_bf4mk"]
+[ext_resource type="Script" uid="uid://b7wcnwi88t2hu" path="res://Scripts/crafting_menu.gd" id="1_bf4mk"]
 [ext_resource type="PackedScene" uid="uid://c856iwxkl1r38" path="res://AtomSlot.tscn" id="2_xpo85"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bf4mk"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://6ncabvvqhph8"]
 
-[ext_resource type="Script" uid="uid://dvyis440j3bv5" path="res://water_spell.gd" id="1_b2h18"]
+[ext_resource type="Script" uid="uid://dvyis440j3bv5" path="res://Scripts/water_spell.gd" id="1_b2h18"]
 [ext_resource type="Texture2D" uid="uid://dam7a3yl15okx" path="res://WatersSpell.png" id="2_b2h18"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i5veo"]

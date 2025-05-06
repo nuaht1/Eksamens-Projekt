@@ -15,11 +15,12 @@ func _ready() -> void:
 	db = SQLite.new()
 	db.path = "user://data.db"
 	if not db.open_db():
-		push_error("❌ Could not open user://data.db")
+		push_error("❌ Could not open %s" % db.path)
 		return
+	var abs_path = ProjectSettings.globalize_path(db.path)
+	print("DB ligger her: ", abs_path)
 
 	# 2) Ensure our table exists
-	#    name: "scores", columns: key TEXT PRIMARY, value INTEGER
 	db.create_table("scores", {
 		"key":   {"data_type":"text", "primary_key":true},
 		"value": {"data_type":"int"}
@@ -46,16 +47,12 @@ func add_score(points: int) -> void:
 		_update_high_score_label(high_score)
 		emit_signal("high_score_changed", high_score)
 
-		# 5) Upsert via helper API:
-		#    Try to update existing row, else insert new one
-		var updated = db.update_rows(
-			"scores",
-			"key='high_score'",
-			{"value":high_score}
-		)
-		if not updated:
-			db.insert_row("scores", {"key":"high_score", "value":high_score})
-		print("✅ New high_score saved:", high_score)
+		# 5) Upsert via SQL INSERT OR REPLACE
+		var sql = "INSERT OR REPLACE INTO scores (key, value) VALUES ('high_score', %d);" % high_score
+		if not db.query(sql):
+			push_error("❌ Kunne ikke gemme high_score (%d)" % high_score)
+		else:
+			print("✅ New high_score saved:", high_score)
 
 func reset_score() -> void:
 	current_score = 0

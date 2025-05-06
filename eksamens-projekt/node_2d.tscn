@@ -1,8 +1,8 @@
 [gd_scene load_steps=33 format=4 uid="uid://bkkjhys5ah2op"]
 
-[ext_resource type="Script" uid="uid://dcxgmw6nod8eh" path="res://player.gd" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://dcxgmw6nod8eh" path="res://Scripts/player.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://cik1fq3antsfa" path="res://tileset 1/Sand.png" id="1_d21ai"]
-[ext_resource type="Script" uid="uid://bhhb6p1glaq4u" path="res://node_2d.gd" id="1_ir8iy"]
+[ext_resource type="Script" uid="uid://bhhb6p1glaq4u" path="res://Scripts/node_2d.gd" id="1_ir8iy"]
 [ext_resource type="PackedScene" uid="uid://bduinbsl18e0i" path="res://acid_slime.tscn" id="3_epypp"]
 [ext_resource type="Texture2D" uid="uid://7pdyl6gfx30m" path="res://tileset 1/tile 3.png" id="4_kdubu"]
 [ext_resource type="Texture2D" uid="uid://drkn8cb6ytltf" path="res://tileset 1/tile 2.png" id="5_d21ai"]
